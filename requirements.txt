@@ -1,0 +1,47 @@
+# LlamaWrites v2.0 — AI Blog Generator
+# Requirements for Python 3.12.x on Windows 10/11
+#
+# INSTALLATION ORDER:
+#
+# Step 1 — Create and activate virtual environment:
+#   python -m venv venv
+#   venv\Scripts\activate
+#
+# Step 2 — Install PyTorch (CPU-only):
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+#
+#   OR for NVIDIA GPU (CUDA 12.1):
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+# Step 3 — Install remaining dependencies:
+#   pip install -r requirements.txt
+#
+# Step 4 — Run:
+#   streamlit run "LlamaWrite Code.py"
+
+# ── Core framework ─────────────────────────────────────────────────────────────
+streamlit>=1.30.0
+
+# ── Deep learning ──────────────────────────────────────────────────────────────
+# torch is installed separately (see above).
+transformers>=4.35.0
+accelerate>=0.24.0
+diffusers>=0.19.0       # includes LCMScheduler for fast 4-step generation
+safetensors>=0.4.0
+
+# ── Image processing ───────────────────────────────────────────────────────────
+Pillow>=9.0.0
+
+# ── Document export ────────────────────────────────────────────────────────────
+python-docx>=0.8.11     # DOCX download export (lightweight, ~1 MB)
+
+# ── Hugging Face Hub ───────────────────────────────────────────────────────────
+huggingface_hub>=0.19.0
+
+# ── Tokenization ───────────────────────────────────────────────────────────────
+tokenizers>=0.13.0
+
+# ── Utilities ──────────────────────────────────────────────────────────────────
+requests>=2.28.0
+tqdm>=4.64.0
+filelock>=3.12.0
+regex>=2023.0.0
